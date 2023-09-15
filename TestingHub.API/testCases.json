@@ -1,0 +1,8 @@
+{
+  "ping": {
+    "bodyJson": {},
+    "queryParams": {},
+    "method": "GET",
+    "apiUrl": "/services/api/feed/ping"
+  }
+}
