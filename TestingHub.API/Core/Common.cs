@@ -88,7 +88,7 @@ namespace TestingHub.API.Core
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
             // Search for TestingHub.API.csproj files in the current directory and its parent directories
-            string[] solutionFiles = Directory.GetFiles(currentDirectory, "TestingHub.csproj");
+            string[] solutionFiles = Directory.GetFiles(currentDirectory, "TestingHub.API.csproj");
 
             while (solutionFiles.Length == 0)
             {
@@ -100,7 +100,7 @@ namespace TestingHub.API.Core
                 }
 
                 currentDirectory = parentDirectory;
-                solutionFiles = Directory.GetFiles(currentDirectory, "TestingHub.csproj");
+                solutionFiles = Directory.GetFiles(currentDirectory, "TestingHub.API.csproj");
             }
 
             // Return the directory containing the first TestingHub.API.csproj file found
