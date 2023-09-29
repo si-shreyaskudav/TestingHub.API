@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>xtest</Title>
+      <Shortcut>xtest</Shortcut>
+      <Description>Code snippet for generating test template for TestingHub.</Description>
+      <Author>Shreyas K.</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>testMethodName</ID>
+          <ToolTip>Test method name</ToolTip>
+          <Default>Test</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+[Fact]
+public async void $testMethodName$()
+{
+    // Arrange
+    var testCase = testCases["$testMethodName$"];
+
+    // Act
+    var response = await client.CallAsync(testCase);
+
+    // Assert
+    response.SuccessAsserts();
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
